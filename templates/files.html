@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Files</title>
+</head>
+
+<body>
+
+    <h1>My Cloud Files</h1>
+
+    {% if files %}
+        <ul>
+            {% for file in files %}
+                <li>
+                    {{ file }}
+
+                    <a href="/download/{{ file }}">Download</a>
+
+                    <a href="/share/{{ file }}">Share</a>
+
+                    <a href="/delete/{{ file }}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No files found.</p>
+    {% endif %}
+
+    <br>
+
+    <a href="/">← Back to Upload</a>
+
+</body>
+</html>
